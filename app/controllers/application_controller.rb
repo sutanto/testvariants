@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
     # for clarity, but these lines aren't needed:
     respond_to do |format|
       format.html
-      # format.html.phone
       format.html.mobile
       format.html.tablet
     end
@@ -17,13 +16,11 @@ class ApplicationController < ActionController::Base
   private
 
     def device_type
-      request.env['mobvious.device_type']
+      browser.tablet? ? :tablet : browser.mobile? ? :mobile : :desktop
     end
     helper_method :device_type
 
     def set_variant
-      # we can do something like this if we want to use :phone variant (instead of :mobile)
-      # request.variant = { mobile: :phone, tablet: :tablet }[device_type]
       request.variant = device_type
     end
 end
