@@ -1,0 +1,10 @@
+language: ruby
+env:
+  global:
+    - GLOBAL_ENV=global_env
+  cmd_one:
+    - THE_CMD=one
+  cmd_two:
+    - THE_CMD=two
+script:
+  - echo $THE_CMD
