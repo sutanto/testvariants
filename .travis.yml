@@ -1,10 +1,8 @@
 language: ruby
 install: true
 env:
-  global:
-    - GLOBAL_ENV=global_env
-  matrix:
-    - THE_CMD=true
-    - THE_CMD=false
+global:
+- GLOBAL_ENV=global_env
 script:
-  - $THE_CMD
+  - true
+  - false
