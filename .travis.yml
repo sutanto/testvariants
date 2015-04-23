@@ -1,9 +1,10 @@
 language: ruby
+install: true
 env:
   global:
     - GLOBAL_ENV=global_env
   matrix:
-    - THE_CMD=one
-    - THE_CMD=two
+    - THE_CMD=true
+    - THE_CMD=false
 script:
-  - echo $THE_CMD
+  - $THE_CMD
